@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.estate.entity.Cart;
-import com.example.estate.entity.User;
 import com.example.estate.repository.CartRepository;
 
 @Service

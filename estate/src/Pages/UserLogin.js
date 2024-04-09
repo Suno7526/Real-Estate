@@ -24,6 +24,7 @@ const UserLogin = () => {
           // Save user information in sessionStorage
           sessionStorage.setItem('userEmail', email);
           sessionStorage.setItem('userCode', userData.userCode); // userCode 저장
+          sessionStorage.setItem('userName', userData.Name);
 
           // Redirect to Home page
           window.location.href = '/Home';

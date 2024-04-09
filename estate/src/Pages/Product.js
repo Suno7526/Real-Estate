@@ -53,6 +53,7 @@ const Product = () => {
       });
 
       console.log('상품을 장바구니에 담았습니다.');
+      alert('상품을 장바구니에 담았습니다.');
     } catch (error) {
       console.error('상품을 장바구니에 담는 중 오류 발생:', error);
     }
@@ -89,10 +90,7 @@ const Product = () => {
 
         <section id="description-card">
           <div className="description-card">
-            <div className="grid-item">
-              [제조사] 상품 명 : {product.productName} {userCode}
-              {productCode}
-            </div>
+            <div className="grid-item">상품 명 : {product.productName}</div>
             <div className="grid-item">판매가 : {product.productPrice}</div>
             <div className="grid-item">제조사 : {product.companyName}</div>
             <div className="grid-item">SIZE : {product.productSize}</div>
