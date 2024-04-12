@@ -63,7 +63,7 @@ const Header = () => {
               <Link to="/Category/OUTER">OUTER</Link>
               <ul>
                 <li>
-                  <Link to="/Category/jaket">jaket</Link>
+                  <Link to="/Category/재킷">자캣</Link>
                 </li>
                 <li>
                   <Link to="/Category/집업">집업</Link>

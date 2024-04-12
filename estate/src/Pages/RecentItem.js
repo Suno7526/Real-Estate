@@ -14,10 +14,22 @@ const RecentItem = () => {
           const response = await axios.get(
             `http://localhost:8000/getViewedProduct/${userCode}`,
           );
-          // 서버에서 이미 최신 순으로 정렬되어 반환되므로 처음부터 10개만 가져옵니다.
-          setRecentProducts(response.data.slice(0, 10));
+          // 중복을 제거하기 위해 set을 사용하여 유니크한 상품만 추출
+          const uniqueProducts = Array.from(
+            new Set(
+              response.data.map((product) => product.product.productCode),
+            ),
+          ).map((productCode) => {
+            // 중복 제거된 제품 코드에 해당하는 상품 반환
+            return response.data.find(
+              (product) => product.product.productCode === productCode,
+            );
+          });
+
+          // 상위 10개만 가져옴
+          setRecentProducts(uniqueProducts.slice(0, 10));
         } else {
-          console.log('사용자 코드가 없습니다.');
+          alert('사용자 코드가 없습니다.');
         }
       } catch (error) {
         console.error('최근 본 상품을 불러오는 중 오류 발생:', error);
