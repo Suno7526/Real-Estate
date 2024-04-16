@@ -23,6 +23,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -39,6 +40,28 @@
   position: absolute; /* 절대 위치로 설정 */
   bottom: 10px; /* 아래에서 10px 떨어진 위치 */
   right: 10px; /* 오른쪽에서 10px 떨어진 위치 */
+}
+
+.order-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  color: #e6a15c; /* 버튼의 텍스트 색상 */
+  border: 2px solid #e6a15c; /* 버튼의 테두리 스타일 및 색상 */
+  border-radius: 10px; /* 버튼의 둥근 모서리 설정 */
+  font-weight: bold;
+}
+
+.order-btn:hover {
+  background-color: #e6a15c; /* hover 상태일 때 배경색 */
+  color: #232a3f; /* hover 상태일 때 글자색 */
 }
 
 .modal-content p {
