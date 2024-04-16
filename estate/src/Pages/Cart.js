@@ -62,9 +62,6 @@ const Cart = () => {
           <p>장바구니가 비어 있습니다.</p>
         )}
       </div>
-      <footer>
-        <p>© 기타 문의 바람.</p>
-      </footer>
     </div>
   );
 };

@@ -15,6 +15,7 @@ import Footer from './Components/Footer';
 import Body from './Components/Body';
 import Question from './Pages/Question';
 import Category from './Pages/Category';
+import Modal from './Pages/Modal';
 
 //123124124
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Mypage" element={<Mypage />} />
         <Route path="/Question" element={<Question />} />
+        <Route path="/Modal" element={<Modal />} />
       </Routes>
       <Footer />
     </BrowserRouter>

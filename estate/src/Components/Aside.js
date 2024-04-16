@@ -15,7 +15,6 @@ const Aside = () => {
           </Link>{' '}
           <button>찜한 상품</button>
           <button>주문 내역</button>
-          <button>장바구니</button>
           <Link to="/Question">
             <button>문의 하기</button>
           </Link>{' '}

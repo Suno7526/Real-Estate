@@ -1,12 +1,19 @@
-import './Product.css'; // 외부 스타일 시트 불러오기
+import './Product.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import Modal from './Modal'; // Modal 컴포넌트 import
 
 const Product = () => {
   const { productCode } = useParams();
   const [product, setProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState({
+    address: '',
+    size: '',
+  });
   const userCode = sessionStorage.getItem('userCode');
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -50,6 +57,7 @@ const Product = () => {
       await axios.post('http://localhost:8000/addToCart', {
         userCode: userCode,
         productCode: productCode,
+        ...selectedOptions,
       });
 
       console.log('상품을 장바구니에 담았습니다.');
@@ -58,7 +66,14 @@ const Product = () => {
     }
   };
 
-  // 등록 날짜를 년월일 형식으로 변환하는 함수
+  const handlePurchaseClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const formatRegisterDate = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -104,7 +119,9 @@ const Product = () => {
 
             {/* 버튼 추가 */}
             <div className="buttons">
-              <button className="purchase-btn">구매하기</button>
+              <button className="purchase-btn" onClick={handlePurchaseClick}>
+                구매하기
+              </button>
               <button className="like-btn" onClick={handleLikeClick}>
                 찜하기
               </button>
@@ -135,9 +152,13 @@ const Product = () => {
         </section>
       </div>
 
-      <footer>
-        <p>© 기타 문의 바람.</p>
-      </footer>
+      {/* 모달 */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        selectedOptions={selectedOptions}
+        product={product}
+      />
     </div>
   );
 };
