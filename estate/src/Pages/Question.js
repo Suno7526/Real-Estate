@@ -129,7 +129,7 @@ const Question = () => {
           </select>
         </div>
 
-        <div>
+        <div className="message-container">
           <label htmlFor="message">메시지</label>
           <textarea
             id="message"
@@ -139,7 +139,7 @@ const Question = () => {
           ></textarea>
         </div>
         {/* 전송 버튼의 type을 button으로 변경 */}
-        <button type="button" onClick={handleSubmit}>
+        <button type="button" onClick={handleSubmit} className="submit-button">
           전송
         </button>
       </form>

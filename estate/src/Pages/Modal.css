@@ -17,6 +17,7 @@
   padding: 20px;
   width: 45em; /* 너비를 300px로 설정 */
   height: 20em; /* 높이를 200px로 설정 */
+  border: 3px solid #4c536e; /* 테두리 두껍게 설정 */
 }
 
 .close {
