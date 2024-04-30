@@ -10,9 +10,31 @@ const Category = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`/category/${category}`);
-        // 제품 목록을 viewCount 기준으로 높은 순서로 정렬
-        const sortedProducts = response.data.sort(
+        let response;
+        if (category === 'OUTER') {
+          const jacket = await axios.get(`/category/재킷`);
+          const jumper = await axios.get(`/category/집업`);
+          const coat = await axios.get(`/category/점퍼`);
+          const parka = await axios.get(`/category/코트`);
+          const padding = await axios.get(`/category/패딩`);
+          const paca = await axios.get(`/category/파카`);
+          const mopi = await axios.get(`/category/모피`);
+          const musang = await axios.get(`/category/머스탱`);
+          response = [
+            ...jacket.data,
+            ...jumper.data,
+            ...coat.data,
+            ...parka.data,
+            ...padding.data,
+            ...paca.data,
+            ...mopi.data,
+            ...musang.data,
+          ];
+        } else {
+          response = await axios.get(`/category/${category}`);
+        }
+        // 정렬은 데이터를 받아온 후에 수행
+        const sortedProducts = response.sort(
           (a, b) => b.viewCount - a.viewCount,
         );
         setProduct(sortedProducts);
