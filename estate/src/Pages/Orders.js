@@ -4,29 +4,7 @@ import { Link } from 'react-router-dom'; // Link import 추가
 import Aside from '../Components/Aside';
 
 const Orders = () => {
-  const orderHistory = [
-    {
-      id: 1,
-      productImage: 'gardigun.jpg',
-      orderDate: '2024-03-16',
-      orderNumber: 'ORD001',
-      orderAmount: '$50',
-    },
-    {
-      id: 2,
-      productImage: 'cocodi.jpg',
-      orderDate: '2024-03-15',
-      orderNumber: 'ORD002',
-      orderAmount: '$80',
-    },
-    {
-      id: 3,
-      productImage: 'cococodi.jpg',
-      orderDate: '2024-03-14',
-      orderNumber: 'ORD003',
-      orderAmount: '$120',
-    },
-  ];
+  const orderHistory = [];
 
   return (
     <div className="page">
