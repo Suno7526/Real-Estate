@@ -100,7 +100,6 @@ const Home = () => {
         </Slider>
       </div>
 
-      {/* 추천 상품 섹션 */}
       <div id="recommended-properties">
         <div className="best-item">Best Item</div>
         <div className="sub-best-item">조회수가 높은 아이템 👍</div>
